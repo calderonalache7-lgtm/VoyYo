@@ -159,147 +159,143 @@
 
 <body>
 
-  <header>
-    <h1>VOYYO</h1>
-    <p>Lo necesitas. Nosotros vamos.</p>
-  </header>
+<header>
+  <h1>VOYYO</h1>
+  <p>Lo necesitas. Nosotros vamos.</p>
+</header>
 
-  <section class="hero">
-    <h2>¿Qué necesitas?</h2>
-    <p>Servicios y entregas a domicilio de forma sencilla.</p>
+<section class="hero">
+  <h2>¿Qué necesitas?</h2>
+  <p>Servicios y entregas a domicilio de forma sencilla.</p>
 
-    <button class="btn" onclick="mostrarPedido()">
-      Solicitar un servicio
-    </button>
-  </section>
+  <button class="btn" onclick="mostrarPedido()">
+    Solicitar un servicio
+  </button>
+</section>
 
-  <section class="services">
+<section class="services">
+  <h2>Nuestros servicios</h2>
 
-    <h2>Nuestros servicios</h2>
+  <div class="cards">
 
-    <div class="cards">
-
-      <div class="card">
-        <div class="icon">📦</div>
-        <h3>Repartos</h3>
-        <p>Envíos y recogidas a domicilio.</p>
-
-        <button class="btn" onclick="mostrarPedido('Reparto')">
-          Solicitar
-        </button>
-      </div>
-
-      <div class="card">
-        <div class="icon">🛒</div>
-        <h3>Compras</h3>
-        <p>Te ayudamos con tus compras.</p>
-
-        <button class="btn" onclick="mostrarPedido('Compra')">
-          Solicitar
-        </button>
-      </div>
-
-      <div class="card">
-        <div class="icon">🔧</div>
-        <h3>Otros servicios</h3>
-        <p>Solicita ayuda para diferentes tareas.</p>
-
-        <button class="btn" onclick="mostrarPedido('Servicio')">
-          Solicitar
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="pedido" id="pedido">
-
-    <h2>Solicita tu servicio</h2>
-
-    <label>Servicio</label>
-    <select id="servicio">
-      <option value="Reparto">📦 Reparto</option>
-      <option value="Compra">🛒 Compra</option>
-      <option value="Servicio">🔧 Otro servicio</option>
-    </select>
-
-    <label>Tu nombre</label>
-    <input type="text" id="nombre" placeholder="Escribe tu nombre">
-
-    <label>Teléfono</label>
-    <input type="tel" id="telefono" placeholder="Tu teléfono">
-
-    <label>Dirección de recogida</label>
-    <input type="text" id="recogida" placeholder="¿Dónde recogemos?">
-
-    <label>Dirección de entrega</label>
-    <input type="text" id="entrega" placeholder="¿Dónde entregamos?">
-
-    <label>Detalles del pedido</label>
-    <textarea id="detalles" placeholder="Cuéntanos qué necesitas..."></textarea>
-
-    <div class="precio">
-      Precio estimado: 8 €
+    <div class="card">
+      <div class="icon">📦</div>
+      <h3>Repartos</h3>
+      <p>Envíos y recogidas a domicilio.</p>
+      <button class="btn" onclick="mostrarPedido('Reparto')">
+        Solicitar
+      </button>
     </div>
 
-    <button class="btn" onclick="enviarPedido()">
-      Enviar pedido por WhatsApp
-    </button>
+    <div class="card">
+      <div class="icon">🛒</div>
+      <h3>Compras</h3>
+      <p>Te ayudamos con tus compras.</p>
+      <button class="btn" onclick="mostrarPedido('Compra')">
+        Solicitar
+      </button>
+    </div>
 
-  </section>
+    <div class="card">
+      <div class="icon">🔧</div>
+      <h3>Otros servicios</h3>
+      <p>Solicita ayuda para diferentes tareas.</p>
+      <button class="btn" onclick="mostrarPedido('Servicio')">
+        Solicitar
+      </button>
+    </div>
 
-  <footer>
-    <p>© 2026 VoyYo</p>
-    <p>Servicios a domicilio</p>
-  </footer>
+  </div>
+</section>
 
-  <script>
+<section class="pedido" id="pedido">
 
-    function mostrarPedido(servicio) {
+  <h2>Solicita tu servicio</h2>
 
-      document.getElementById("pedido").style.display = "block";
+  <label>Servicio</label>
+  <select id="servicio">
+    <option value="Reparto">📦 Reparto</option>
+    <option value="Compra">🛒 Compra</option>
+    <option value="Servicio">🔧 Otro servicio</option>
+  </select>
 
-      if (servicio) {
-        document.getElementById("servicio").value = servicio;
-      }
+  <label>Tu nombre</label>
+  <input type="text" id="nombre" placeholder="Escribe tu nombre">
 
-      document.getElementById("pedido").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+  <label>Teléfono</label>
+  <input type="tel" id="telefono" placeholder="Tu teléfono">
 
-    function enviarPedido() {
+  <label>Dirección de recogida</label>
+  <input type="text" id="recogida" placeholder="¿Dónde recogemos?">
 
-      let servicio = document.getElementById("servicio").value;
-      let nombre = document.getElementById("nombre").value;
-      let telefono = document.getElementById("telefono").value;
-      let recogida = document.getElementById("recogida").value;
-      let entrega = document.getElementById("entrega").value;
-      let detalles = document.getElementById("detalles").value;
+  <label>Dirección de entrega</label>
+  <input type="text" id="entrega" placeholder="¿Dónde entregamos?">
 
-      if (!nombre || !telefono || !recogida || !entrega) {
-        alert("Por favor, completa todos los campos.");
-        return;
-      }
+  <label>Detalles del pedido</label>
+  <textarea id="detalles" placeholder="Cuéntanos qué necesitas..."></textarea>
 
-      let mensaje =
-        "NUEVO PEDIDO VOYYO\n\n" +
-        "Servicio: " + servicio + "\n" +
-        "Cliente: " + nombre + "\n" +
-        "Telefono: " + telefono + "\n" +
-        "Recogida: " + recogida + "\n" +
-        "Entrega: " + entrega + "\n" +
-        "Detalles: " + (detalles || "Sin detalles") + "\n\n" +
-        "Precio estimado: 8 EUR";
+  <div class="precio">
+    Precio estimado: 8 €
+  </div>
 
-      let numero = "34641939331";
+  <button class="btn" onclick="enviarPedido()">
+    Enviar pedido por WhatsApp
+  </button>
 
-      window.location.href =
-        "https://wa.me/" + numero + "?text=" +
-        encodeURIComponent(mensaje);
-    }
+</section>
 
-  </script>
+<footer>
+  <p>© 2026 VoyYo</p>
+  <p>Servicios a domicilio</p>
+</footer>
+
+<script>
+
+function mostrarPedido(servicio) {
+
+  document.getElementById("pedido").style.display = "block";
+
+  if (servicio) {
+    document.getElementById("servicio").value = servicio;
+  }
+
+  document.getElementById("pedido").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function enviarPedido() {
+
+  let servicio = document.getElementById("servicio").value;
+  let nombre = document.getElementById("nombre").value;
+  let telefono = document.getElementById("telefono").value;
+  let recogida = document.getElementById("recogida").value;
+  let entrega = document.getElementById("entrega").value;
+  let detalles = document.getElementById("detalles").value;
+
+  if (!nombre || !telefono || !recogida || !entrega) {
+    alert("Por favor, completa todos los campos.");
+    return;
+  }
+
+  let mensaje =
+    "NUEVO PEDIDO VOYYO\n\n" +
+    "Servicio: " + servicio + "\n" +
+    "Cliente: " + nombre + "\n" +
+    "Telefono: " + telefono + "\n" +
+    "Recogida: " + recogida + "\n" +
+    "Entrega: " + entrega + "\n" +
+    "Detalles: " + (detalles || "Sin detalles") + "\n\n" +
+    "Precio estimado: 8 EUR";
+
+  let numero = "34641939331";
+
+  window.location.href =
+    "https://wa.me/" + numero + "?text=" +
+    encodeURIComponent(mensaje);
+}
+
+</script>
 
 </body>
 </html>
