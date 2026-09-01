@@ -124,7 +124,9 @@
       font-weight: bold;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 13px;
       border: 1px solid #ccc;
@@ -326,7 +328,9 @@ function enviarPedido() {
     "Recogida: " + recogida + "\n" +
     "Entrega: " + entrega + "\n" +
     "Detalles: " + (detalles || "Sin detalles") + "\n" +
-    "Distancia: " + (distancia === "0" ? "Más de 10 km" : distancia + " km aprox.") + "\n\n" +
+    "Distancia: " +
+    (distancia === "0" ? "Más de 10 km" : distancia + " km aprox.") +
+    "\n\n" +
     "Precio estimado: " + precioTexto;
 
   let numero = "34641939331";
