@@ -542,29 +542,35 @@
       });
     }
 
-    function enviarPedido() {
+   function enviarPedido() {
 
-      let nombre = document.getElementById("nombre").value;
-      let telefono = document.getElementById("telefono").value;
-      let recogida = document.getElementById("recogida").value;
-      let entrega = document.getElementById("entrega").value;
+  let servicio = document.getElementById("servicio").value;
+  let nombre = document.getElementById("nombre").value;
+  let telefono = document.getElementById("telefono").value;
+  let recogida = document.getElementById("recogida").value;
+  let entrega = document.getElementById("entrega").value;
+  let detalles = document.getElementById("detalles").value;
 
-      if (!nombre || !telefono || !recogida || !entrega) {
+  if (!nombre || !telefono || !recogida || !entrega) {
+    alert("Por favor, completa todos los campos.");
+    return;
+  }
 
-        alert("Por favor, completa todos los campos.");
+  let mensaje =
+    "🚗 *NUEVO PEDIDO VOYYO*%0A%0A" +
+    "📦 Servicio: " + servicio + "%0A" +
+    "👤 Cliente: " + nombre + "%0A" +
+    "📞 Teléfono: " + telefono + "%0A" +
+    "📍 Recogida: " + recogida + "%0A" +
+    "🏠 Entrega: " + entrega + "%0A" +
+    "📝 Detalles: " + (detalles || "Sin detalles") + "%0A%0A" +
+    "💰 Precio estimado: 8 €";
 
-        return;
-      }
+  let numero = "34641939331";
 
-      alert(
-        "¡Pedido preparado!\\n\\n" +
-        "Cliente: " + nombre + "\\n" +
-        "Recogida: " + recogida + "\\n" +
-        "Entrega: " + entrega + "\\n\\n" +
-        "Precio estimado: 8 €"
-      );
-    }
-
+  window.location.href =
+    "https://wa.me/" + numero + "?text=" + mensaje;
+}
   </script>
 
 </body>
