@@ -15,82 +15,89 @@
       font-family: Arial, sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background: #f4f4f4;
       color: #111;
+      line-height: 1.5;
     }
+
+    /* HEADER */
 
     header {
       background: #111;
       color: white;
-      padding: 22px 20px;
+      padding: 25px 20px;
       text-align: center;
     }
 
     header h1 {
       font-size: 42px;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
     }
 
     header p {
-      margin-top: 7px;
+      margin-top: 6px;
       color: #ddd;
+      font-size: 16px;
     }
+
+    /* HERO */
 
     .hero {
       background: white;
-      padding: 55px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     .hero h2 {
       font-size: 32px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .hero p {
       color: #555;
-      font-size: 17px;
-      line-height: 1.6;
-      margin-bottom: 28px;
+      max-width: 600px;
+      margin: 0 auto 28px;
     }
 
     .btn {
-      display: inline-block;
       background: #111;
       color: white;
       border: none;
-      padding: 14px 24px;
+      padding: 15px 25px;
       border-radius: 10px;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      text-decoration: none;
+      transition: 0.2s;
     }
 
     .btn:hover {
-      opacity: 0.85;
+      transform: scale(1.03);
+      opacity: 0.9;
     }
+
+    .btn-whatsapp {
+      background: #25D366;
+    }
+
+    /* SERVICIOS */
 
     .services {
+      padding: 45px 20px;
       max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
     }
 
-    .section-title {
+    .services h2 {
       text-align: center;
+      margin-bottom: 30px;
       font-size: 28px;
-      margin-bottom: 28px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 20px;
     }
 
@@ -99,104 +106,113 @@
       padding: 28px 22px;
       border-radius: 16px;
       text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
     }
 
-    .icon {
+    .card .icon {
       font-size: 45px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .card h3 {
+      margin-bottom: 8px;
       font-size: 21px;
-      margin-bottom: 10px;
     }
 
     .card p {
       color: #666;
-      font-size: 15px;
-      line-height: 1.5;
+      font-size: 14px;
       margin-bottom: 20px;
     }
 
-    .how {
+    /* COMO FUNCIONA */
+
+    .como {
       background: white;
-      padding: 40px 20px;
+      padding: 45px 20px;
     }
 
-    .steps {
-      max-width: 800px;
+    .como h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .pasos {
+      max-width: 900px;
       margin: auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
 
-    .step {
+    .paso {
       text-align: center;
       padding: 20px;
     }
 
-    .step-number {
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
-      margin: 0 auto 12px;
-      border-radius: 50%;
+    .numero {
+      width: 50px;
+      height: 50px;
       background: #111;
       color: white;
-      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
       font-size: 20px;
+      font-weight: bold;
     }
 
-    .step h3 {
-      margin-bottom: 8px;
+    .paso h3 {
+      margin-bottom: 7px;
     }
 
-    .step p {
+    .paso p {
       color: #666;
       font-size: 14px;
-      line-height: 1.5;
     }
 
-    .prices {
-      max-width: 800px;
+    /* ZONA */
+
+    .zona {
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    .zona-box {
+      max-width: 700px;
       margin: auto;
-      padding: 40px 20px;
-    }
-
-    .price-box {
       background: white;
+      padding: 30px;
       border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
     }
 
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 20px;
-      border-bottom: 1px solid #eee;
+    .zona-box .icon {
+      font-size: 45px;
+      margin-bottom: 10px;
     }
 
-    .price-row:last-child {
-      border-bottom: none;
+    .zona-box h2 {
+      margin-bottom: 10px;
     }
 
-    .price {
-      font-weight: bold;
-      font-size: 18px;
+    .zona-box p {
+      color: #666;
     }
+
+    /* PEDIDO */
 
     .pedido {
       display: none;
       background: white;
-      margin: 30px auto;
-      padding: 28px 22px;
-      max-width: 600px;
+      margin: 25px auto 45px;
+      padding: 28px;
+      max-width: 650px;
       border-radius: 16px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
     }
 
     .pedido h2 {
@@ -215,10 +231,11 @@
     select,
     textarea {
       width: 100%;
-      padding: 13px;
+      padding: 14px;
       border: 1px solid #ccc;
       border-radius: 9px;
       font-size: 16px;
+      background: white;
     }
 
     textarea {
@@ -238,71 +255,83 @@
 
     .info {
       margin-top: 15px;
-      padding: 14px;
+      padding: 13px;
       background: #fff8e1;
-      border-radius: 10px;
-      color: #555;
+      border-radius: 9px;
       font-size: 14px;
-      line-height: 1.5;
+      color: #555;
     }
 
-    .contact {
+    /* CONTACTO */
+
+    .contacto {
       background: #111;
       color: white;
       text-align: center;
       padding: 45px 20px;
     }
 
-    .contact h2 {
-      margin-bottom: 12px;
+    .contacto h2 {
+      margin-bottom: 10px;
     }
 
-    .contact p {
+    .contacto p {
       color: #ddd;
       margin-bottom: 20px;
     }
 
-    .whatsapp {
-      background: white;
-      color: #111;
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+      padding: 45px 20px;
     }
 
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .pregunta {
+      background: white;
+      padding: 18px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+    }
+
+    .pregunta h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .pregunta p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
     footer {
-      background: #111;
-      color: #aaa;
+      background: #000;
+      color: white;
       text-align: center;
       padding: 25px 20px;
-      font-size: 14px;
     }
 
     footer p {
       margin: 5px;
-    }
-
-    @media (max-width: 600px) {
-
-      header h1 {
-        font-size: 36px;
-      }
-
-      .hero h2 {
-        font-size: 27px;
-      }
-
-      .price-row {
-        font-size: 14px;
-      }
-
-      .price {
-        font-size: 16px;
-      }
-
+      color: #ccc;
+      font-size: 14px;
     }
 
   </style>
 </head>
 
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -313,28 +342,29 @@
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
   <h2>Servicios a domicilio en Cuenca</h2>
 
   <p>
-    Repartos, compras y pequeños servicios.
-    <br>
-    Tú lo necesitas. Nosotros vamos.
+    ¿Necesitas que recojamos, llevemos o hagamos algo por ti?
+    Solicita tu servicio de forma rápida y sencilla.
   </p>
 
   <button class="btn" onclick="mostrarPedido()">
-    Solicitar un servicio
+    🚗 Solicitar un servicio
   </button>
 
 </section>
 
 
+<!-- SERVICIOS -->
+
 <section class="services">
 
-  <h2 class="section-title">
-    ¿Qué necesitas?
-  </h2>
+  <h2>Nuestros servicios</h2>
 
   <div class="cards">
 
@@ -346,8 +376,8 @@
       <h3>Repartos</h3>
 
       <p>
-        Recogemos y entregamos paquetes,
-        documentos y objetos dentro de Cuenca.
+        Recogemos y entregamos tus paquetes
+        dentro de Cuenca.
       </p>
 
       <button
@@ -369,7 +399,7 @@
 
       <p>
         ¿No puedes ir a comprar?
-        Podemos ayudarte a recoger y entregar tu compra.
+        Podemos ayudarte.
       </p>
 
       <button
@@ -390,8 +420,8 @@
       <h3>Otros servicios</h3>
 
       <p>
-        Necesitas ayuda con una tarea
-        o servicio. Consúltanos.
+        Necesitas ayuda con alguna tarea?
+        Cuéntanos qué necesitas.
       </p>
 
       <button
@@ -410,20 +440,18 @@
 </section>
 
 
-<section class="how">
+<!-- COMO FUNCIONA -->
 
-  <h2 class="section-title">
-    ¿Cómo funciona?
-  </h2>
+<section class="como">
 
-  <div class="steps">
+  <h2>¿Cómo funciona?</h2>
+
+  <div class="pasos">
 
 
-    <div class="step">
+    <div class="paso">
 
-      <div class="step-number">
-        1
-      </div>
+      <div class="numero">1</div>
 
       <h3>Solicita</h3>
 
@@ -435,33 +463,42 @@
     </div>
 
 
-    <div class="step">
+    <div class="paso">
 
-      <div class="step-number">
-        2
-      </div>
+      <div class="numero">2</div>
 
-      <h3>Confirmamos</h3>
+      <h3>Te contactamos</h3>
 
       <p>
-        Recibimos tu pedido por WhatsApp
+        Recibimos tu solicitud por WhatsApp
         y confirmamos los detalles.
       </p>
 
     </div>
 
 
-    <div class="step">
+    <div class="paso">
 
-      <div class="step-number">
-        3
-      </div>
+      <div class="numero">3</div>
 
-      <h3>Vamos</h3>
+      <h3>Realizamos el servicio</h3>
 
       <p>
-        Recogemos lo que necesites
-        y lo llevamos a destino.
+        Nos encargamos de llevar a cabo
+        tu solicitud.
+      </p>
+
+    </div>
+
+
+    <div class="paso">
+
+      <div class="numero">4</div>
+
+      <h3>¡Listo!</h3>
+
+      <p>
+        Tu pedido llega donde necesitas.
       </p>
 
     </div>
@@ -472,74 +509,39 @@
 </section>
 
 
-<section class="prices">
+<!-- ZONA -->
 
-  <h2 class="section-title">
-    Precios orientativos
-  </h2>
+<section class="zona">
 
-  <div class="price-box">
+  <div class="zona-box">
 
-    <div class="price-row">
+    <div class="icon">📍</div>
 
-      <span>📍 Hasta 3 km</span>
+    <h2>Servicio local en Cuenca</h2>
 
-      <span class="price">
-        6 €
-      </span>
+    <p>
+      Actualmente VoyYo trabaja principalmente
+      dentro de Cuenca.
+    </p>
 
-    </div>
-
-
-    <div class="price-row">
-
-      <span>📍 De 3 a 6 km</span>
-
-      <span class="price">
-        8 €
-      </span>
-
-    </div>
-
-
-    <div class="price-row">
-
-      <span>📍 De 6 a 10 km</span>
-
-      <span class="price">
-        10 €
-      </span>
-
-    </div>
-
-
-    <div class="price-row">
-
-      <span>📍 Más de 10 km</span>
-
-      <span class="price">
-        Consultar
-      </span>
-
-    </div>
+    <p>
+      Para servicios fuera de la zona,
+      consúltanos por WhatsApp.
+    </p>
 
   </div>
 
 </section>
 
 
-<section
-  class="pedido"
-  id="pedido">
+<!-- FORMULARIO -->
 
-  <h2>
-    Solicita tu servicio
-  </h2>
+<section class="pedido" id="pedido">
+
+  <h2>Solicita tu servicio</h2>
 
 
-  <label>
-    Servicio
-  </label>
+  <label>Servicio</label>
 
   <select id="servicio">
 
@@ -558,9 +560,7 @@
   </select>
 
 
-  <label>
-    Tu nombre
-  </label>
+  <label>Tu nombre</label>
 
   <input
     type="text"
@@ -568,9 +568,7 @@
     placeholder="Escribe tu nombre">
 
 
-  <label>
-    Teléfono
-  </label>
+  <label>Teléfono</label>
 
   <input
     type="tel"
@@ -578,9 +576,7 @@
     placeholder="Tu teléfono">
 
 
-  <label>
-    Dirección de recogida
-  </label>
+  <label>Dirección de recogida</label>
 
   <input
     type="text"
@@ -588,9 +584,7 @@
     placeholder="¿Dónde recogemos?">
 
 
-  <label>
-    Dirección de entrega
-  </label>
+  <label>Dirección de entrega</label>
 
   <input
     type="text"
@@ -598,9 +592,7 @@
     placeholder="¿Dónde entregamos?">
 
 
-  <label>
-    Distancia aproximada
-  </label>
+  <label>Distancia aproximada</label>
 
   <select
     id="distancia"
@@ -625,9 +617,7 @@
   </select>
 
 
-  <label>
-    Detalles del servicio
-  </label>
+  <label>Detalles del pedido</label>
 
   <textarea
     id="detalles"
@@ -645,14 +635,9 @@
 
   <div class="info">
 
-    📍 Actualmente prestamos servicio
-    únicamente en Cuenca.
-
-    <br><br>
-
-    💰 Los precios son orientativos.
-    El precio final se confirma antes
-    de realizar el servicio.
+    📌 El precio mostrado es orientativo.
+    Para servicios especiales o fuera de Cuenca
+    se confirmará el precio por WhatsApp.
 
   </div>
 
@@ -661,7 +646,7 @@
 
 
   <button
-    class="btn"
+    class="btn btn-whatsapp"
     onclick="enviarPedido()">
 
     📲 Enviar pedido por WhatsApp
@@ -671,47 +656,103 @@
 </section>
 
 
-<section class="contact">
+<!-- FAQ -->
 
-  <h2>
-    ¿Tienes alguna duda?
-  </h2>
+<section class="faq">
+
+  <h2>Preguntas frecuentes</h2>
+
+
+  <div class="pregunta">
+
+    <h3>¿Dónde trabaja VoyYo?</h3>
+
+    <p>
+      Actualmente ofrecemos nuestros servicios
+      principalmente dentro de Cuenca.
+    </p>
+
+  </div>
+
+
+  <div class="pregunta">
+
+    <h3>¿Cómo solicito un servicio?</h3>
+
+    <p>
+      Rellena el formulario y pulsa el botón
+      para enviarnos el pedido por WhatsApp.
+    </p>
+
+  </div>
+
+
+  <div class="pregunta">
+
+    <h3>¿El precio es definitivo?</h3>
+
+    <p>
+      El precio mostrado es orientativo.
+      Antes de realizar el servicio confirmaremos
+      los detalles y el precio.
+    </p>
+
+  </div>
+
+
+  <div class="pregunta">
+
+    <h3>¿Puedo preguntar antes de hacer un pedido?</h3>
+
+    <p>
+      Sí. Puedes contactar directamente
+      con VoyYo por WhatsApp.
+    </p>
+
+  </div>
+
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto">
+
+  <h2>¿Tienes alguna pregunta?</h2>
 
   <p>
     Escríbenos directamente por WhatsApp.
   </p>
 
-  <a
-    class="btn whatsapp"
-    href="https://wa.me/34641939331"
-    target="_blank">
+  <button
+    class="btn btn-whatsapp"
+    onclick="contactarWhatsApp()">
 
     💬 Hablar por WhatsApp
 
-  </a>
+  </button>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-  <p>
-    © 2026 VoyYo
-  </p>
+  <p>© 2026 VoyYo</p>
 
-  <p>
-    Servicios a domicilio · Cuenca
-  </p>
+  <p>Servicios a domicilio en Cuenca</p>
 
-  <p>
-    Horario: consultar disponibilidad
-  </p>
+  <p>Lo necesitas. Nosotros vamos.</p>
 
 </footer>
 
 
 <script>
 
+
+/* MOSTRAR FORMULARIO */
 
 function mostrarPedido(servicio) {
 
@@ -733,6 +774,8 @@ function mostrarPedido(servicio) {
 
 }
 
+
+/* CALCULAR PRECIO */
 
 function calcularPrecio() {
 
@@ -761,6 +804,8 @@ function calcularPrecio() {
 
 }
 
+
+/* ENVIAR PEDIDO */
 
 function enviarPedido() {
 
@@ -830,29 +875,25 @@ function enviarPedido() {
 
   if (distancia === "6") {
 
-    distanciaTexto =
-      "Hasta 3 km";
+    distanciaTexto = "Hasta 3 km";
 
   }
 
   else if (distancia === "8") {
 
-    distanciaTexto =
-      "De 3 a 6 km";
+    distanciaTexto = "De 3 a 6 km";
 
   }
 
   else if (distancia === "10") {
 
-    distanciaTexto =
-      "De 6 a 10 km";
+    distanciaTexto = "De 6 a 10 km";
 
   }
 
   else {
 
-    distanciaTexto =
-      "Más de 10 km";
+    distanciaTexto = "Más de 10 km";
 
   }
 
@@ -861,11 +902,9 @@ function enviarPedido() {
 
     "🚗 NUEVO PEDIDO VOYYO\n\n" +
 
-    "📍 Ciudad: Cuenca\n" +
-
     "📦 Servicio: " +
     servicio +
-    "\n\n" +
+    "\n" +
 
     "👤 Cliente: " +
     nombre +
@@ -873,7 +912,7 @@ function enviarPedido() {
 
     "📞 Teléfono: " +
     telefono +
-    "\n\n" +
+    "\n" +
 
     "📍 Recogida: " +
     recogida +
@@ -881,7 +920,7 @@ function enviarPedido() {
 
     "🏠 Entrega: " +
     entrega +
-    "\n\n" +
+    "\n" +
 
     "📏 Distancia: " +
     distanciaTexto +
@@ -909,7 +948,29 @@ function enviarPedido() {
 }
 
 
+/* CONTACTO DIRECTO */
+
+function contactarWhatsApp() {
+
+  let numero =
+    "34641939331";
+
+
+  let mensaje =
+    "Hola VoyYo, tengo una consulta sobre un servicio.";
+
+
+  window.location.href =
+
+    "https://wa.me/" +
+    numero +
+    "?text=" +
+    encodeURIComponent(mensaje);
+
+}
+
 </script>
+
 
 </body>
 </html>
