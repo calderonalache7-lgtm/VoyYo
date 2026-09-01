@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>VoyYo - Servicios a domicilio</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,23 +23,24 @@
     header {
       background: #111;
       color: white;
-      padding: 22px;
+      padding: 25px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 38px;
-      letter-spacing: 2px;
+      font-size: 40px;
+      letter-spacing: 3px;
     }
 
     header p {
       margin-top: 8px;
       color: #ddd;
+      font-size: 16px;
     }
 
     .hero {
       background: white;
-      padding: 45px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
 
@@ -62,15 +65,19 @@
       cursor: pointer;
     }
 
+    .btn:hover {
+      opacity: 0.85;
+    }
+
     .services {
-      padding: 30px 20px;
+      padding: 35px 20px;
       max-width: 900px;
       margin: auto;
     }
 
     .services h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .cards {
@@ -88,7 +95,7 @@
     }
 
     .card .icon {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 12px;
     }
 
@@ -113,14 +120,14 @@
     }
 
     .pedido h2 {
-      margin-bottom: 20px;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     label {
       display: block;
-      margin-top: 14px;
-      margin-bottom: 6px;
+      margin-top: 15px;
+      margin-bottom: 7px;
       font-weight: bold;
     }
 
@@ -140,40 +147,64 @@
     }
 
     .precio {
-      margin: 20px 0;
-      padding: 15px;
+      margin: 22px 0;
+      padding: 18px;
       background: #f1f1f1;
       border-radius: 10px;
       text-align: center;
-      font-size: 20px;
+      font-size: 21px;
       font-weight: bold;
+    }
+
+    .info {
+      margin-top: 15px;
+      padding: 12px;
+      background: #fff8e1;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #555;
     }
 
     footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       margin-top: 30px;
     }
+
+    footer p {
+      margin: 5px;
+    }
+
   </style>
 </head>
 
 <body>
 
 <header>
+
   <h1>VOYYO</h1>
+
   <p>Lo necesitas. Nosotros vamos.</p>
+
 </header>
 
+
 <section class="hero">
+
   <h2>¿Qué necesitas?</h2>
-  <p>Servicios y entregas a domicilio de forma sencilla.</p>
+
+  <p>
+    Servicios y entregas a domicilio de forma sencilla.
+  </p>
 
   <button class="btn" onclick="mostrarPedido()">
     Solicitar un servicio
   </button>
+
 </section>
+
 
 <section class="services">
 
@@ -181,164 +212,385 @@
 
   <div class="cards">
 
+
     <div class="card">
+
       <div class="icon">📦</div>
+
       <h3>Repartos</h3>
-      <p>Envíos y recogidas a domicilio.</p>
 
-      <button class="btn" onclick="mostrarPedido('Reparto')">
+      <p>
+        Envíos y recogidas a domicilio.
+      </p>
+
+      <button
+        class="btn"
+        onclick="mostrarPedido('Reparto')">
+
         Solicitar
+
       </button>
+
     </div>
 
+
     <div class="card">
+
       <div class="icon">🛒</div>
-      <h3>Compras</h3>
-      <p>Te ayudamos con tus compras.</p>
 
-      <button class="btn" onclick="mostrarPedido('Compra')">
+      <h3>Compras</h3>
+
+      <p>
+        Te ayudamos con tus compras.
+      </p>
+
+      <button
+        class="btn"
+        onclick="mostrarPedido('Compra')">
+
         Solicitar
+
       </button>
+
     </div>
+
 
     <div class="card">
-      <div class="icon">🔧</div>
-      <h3>Otros servicios</h3>
-      <p>Solicita ayuda para diferentes tareas.</p>
 
-      <button class="btn" onclick="mostrarPedido('Servicio')">
+      <div class="icon">🔧</div>
+
+      <h3>Otros servicios</h3>
+
+      <p>
+        Solicita ayuda para diferentes tareas.
+      </p>
+
+      <button
+        class="btn"
+        onclick="mostrarPedido('Servicio')">
+
         Solicitar
+
       </button>
+
     </div>
+
 
   </div>
 
 </section>
+
 
 <section class="pedido" id="pedido">
 
   <h2>Solicita tu servicio</h2>
 
+
   <label>Servicio</label>
 
   <select id="servicio">
-    <option value="Reparto">📦 Reparto</option>
-    <option value="Compra">🛒 Compra</option>
-    <option value="Servicio">🔧 Otro servicio</option>
+
+    <option value="Reparto">
+      📦 Reparto
+    </option>
+
+    <option value="Compra">
+      🛒 Compra
+    </option>
+
+    <option value="Servicio">
+      🔧 Otro servicio
+    </option>
+
   </select>
 
+
   <label>Tu nombre</label>
-  <input type="text" id="nombre" placeholder="Escribe tu nombre">
+
+  <input
+    type="text"
+    id="nombre"
+    placeholder="Escribe tu nombre">
+
 
   <label>Teléfono</label>
-  <input type="tel" id="telefono" placeholder="Tu teléfono">
+
+  <input
+    type="tel"
+    id="telefono"
+    placeholder="Tu teléfono">
+
 
   <label>Dirección de recogida</label>
-  <input type="text" id="recogida" placeholder="¿Dónde recogemos?">
+
+  <input
+    type="text"
+    id="recogida"
+    placeholder="¿Dónde recogemos?">
+
 
   <label>Dirección de entrega</label>
-  <input type="text" id="entrega" placeholder="¿Dónde entregamos?">
 
-  <label>Detalles del pedido</label>
-  <textarea id="detalles" placeholder="Cuéntanos qué necesitas..."></textarea>
+  <input
+    type="text"
+    id="entrega"
+    placeholder="¿Dónde entregamos?">
+
 
   <label>Distancia aproximada</label>
 
-  <select id="distancia" onchange="calcularPrecio()">
-    <option value="6">Hasta 3 km - 6 €</option>
-    <option value="8">3 a 6 km - 8 €</option>
-    <option value="10">6 a 10 km - 10 €</option>
-    <option value="0">Más de 10 km - Consultar</option>
+  <select
+    id="distancia"
+    onchange="calcularPrecio()">
+
+    <option value="6">
+      Hasta 3 km - 6 €
+    </option>
+
+    <option value="8">
+      De 3 a 6 km - 8 €
+    </option>
+
+    <option value="10">
+      De 6 a 10 km - 10 €
+    </option>
+
+    <option value="0">
+      Más de 10 km - Consultar
+    </option>
+
   </select>
 
-  <div class="precio" id="precio">
+
+  <label>Detalles del pedido</label>
+
+  <textarea
+    id="detalles"
+    placeholder="Cuéntanos qué necesitas..."></textarea>
+
+
+  <div
+    class="precio"
+    id="precio">
+
     Precio estimado: 6 €
+
   </div>
 
-  <button class="btn" onclick="enviarPedido()">
-    Enviar pedido por WhatsApp
+
+  <div class="info">
+
+    📌 El precio mostrado es una estimación.
+    Para servicios especiales o distancias superiores
+    a 10 km, consulta el precio por WhatsApp.
+
+  </div>
+
+
+  <br>
+
+
+  <button
+    class="btn"
+    onclick="enviarPedido()">
+
+    📲 Enviar pedido por WhatsApp
+
   </button>
 
 </section>
 
+
 <footer>
+
   <p>© 2026 VoyYo</p>
+
   <p>Servicios a domicilio</p>
+
+  <p>Cuenca</p>
+
 </footer>
 
+
 <script>
+
 
 function mostrarPedido(servicio) {
 
   document.getElementById("pedido").style.display = "block";
 
+
   if (servicio) {
+
     document.getElementById("servicio").value = servicio;
+
   }
+
 
   document.getElementById("pedido").scrollIntoView({
     behavior: "smooth"
   });
+
 }
 
 
 function calcularPrecio() {
 
-  let distancia = document.getElementById("distancia").value;
-  let precio = document.getElementById("precio");
+  let distancia =
+    document.getElementById("distancia").value;
+
+  let precio =
+    document.getElementById("precio");
+
 
   if (distancia === "0") {
-    precio.innerHTML = "Precio: Consultar";
+
+    precio.innerHTML =
+      "Precio: Consultar";
+
   } else {
-    precio.innerHTML = "Precio estimado: " + distancia + " €";
+
+    precio.innerHTML =
+      "Precio estimado: " +
+      distancia +
+      " €";
+
   }
+
 }
 
 
 function enviarPedido() {
 
-  let servicio = document.getElementById("servicio").value;
-  let nombre = document.getElementById("nombre").value;
-  let telefono = document.getElementById("telefono").value;
-  let recogida = document.getElementById("recogida").value;
-  let entrega = document.getElementById("entrega").value;
-  let detalles = document.getElementById("detalles").value;
-  let distancia = document.getElementById("distancia").value;
+  let servicio =
+    document.getElementById("servicio").value;
 
-  if (!nombre || !telefono || !recogida || !entrega) {
+  let nombre =
+    document.getElementById("nombre").value.trim();
 
-    alert("Por favor, completa todos los campos.");
+  let telefono =
+    document.getElementById("telefono").value.trim();
+
+  let recogida =
+    document.getElementById("recogida").value.trim();
+
+  let entrega =
+    document.getElementById("entrega").value.trim();
+
+  let detalles =
+    document.getElementById("detalles").value.trim();
+
+  let distancia =
+    document.getElementById("distancia").value;
+
+
+  if (
+    !nombre ||
+    !telefono ||
+    !recogida ||
+    !entrega
+  ) {
+
+    alert(
+      "Por favor, completa tu nombre, teléfono, recogida y entrega."
+    );
 
     return;
+
   }
 
-  let precioTexto;
+
+  let precio;
+
 
   if (distancia === "0") {
-    precioTexto = "Consultar";
+
+    precio = "Consultar";
+
   } else {
-    precioTexto = distancia + " EUR";
+
+    precio = distancia + " EUR";
+
   }
 
-  let mensaje =
-    "NUEVO PEDIDO VOYYO\n\n" +
-    "Servicio: " + servicio + "\n" +
-    "Cliente: " + nombre + "\n" +
-    "Telefono: " + telefono + "\n" +
-    "Recogida: " + recogida + "\n" +
-    "Entrega: " + entrega + "\n" +
-    "Detalles: " + (detalles || "Sin detalles") + "\n" +
-    "Distancia: " +
-    (distancia === "0" ? "Más de 10 km" : distancia + " km aprox.") +
-    "\n\n" +
-    "Precio estimado: " + precioTexto;
 
-  let numero = "34641939331";
+  let distanciaTexto;
+
+
+  if (distancia === "6") {
+
+    distanciaTexto = "Hasta 3 km";
+
+  }
+
+  else if (distancia === "8") {
+
+    distanciaTexto = "De 3 a 6 km";
+
+  }
+
+  else if (distancia === "10") {
+
+    distanciaTexto = "De 6 a 10 km";
+
+  }
+
+  else {
+
+    distanciaTexto = "Más de 10 km";
+
+  }
+
+
+  let mensaje =
+
+    "🚗 NUEVO PEDIDO VOYYO\n\n" +
+
+    "📦 Servicio: " +
+    servicio +
+    "\n" +
+
+    "👤 Cliente: " +
+    nombre +
+    "\n" +
+
+    "📞 Teléfono: " +
+    telefono +
+    "\n" +
+
+    "📍 Recogida: " +
+    recogida +
+    "\n" +
+
+    "🏠 Entrega: " +
+    entrega +
+    "\n" +
+
+    "📏 Distancia: " +
+    distanciaTexto +
+    "\n" +
+
+    "📝 Detalles: " +
+    (detalles || "Sin detalles") +
+    "\n\n" +
+
+    "💰 Precio estimado: " +
+    precio;
+
+
+  let numero =
+    "34641939331";
+
 
   window.location.href =
-    "https://wa.me/" + numero + "?text=" +
+
+    "https://wa.me/" +
+    numero +
+    "?text=" +
     encodeURIComponent(mensaje);
+
 }
+
 
 </script>
 
