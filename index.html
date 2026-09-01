@@ -174,6 +174,7 @@
 </section>
 
 <section class="services">
+
   <h2>Nuestros servicios</h2>
 
   <div class="cards">
@@ -182,6 +183,7 @@
       <div class="icon">📦</div>
       <h3>Repartos</h3>
       <p>Envíos y recogidas a domicilio.</p>
+
       <button class="btn" onclick="mostrarPedido('Reparto')">
         Solicitar
       </button>
@@ -191,6 +193,7 @@
       <div class="icon">🛒</div>
       <h3>Compras</h3>
       <p>Te ayudamos con tus compras.</p>
+
       <button class="btn" onclick="mostrarPedido('Compra')">
         Solicitar
       </button>
@@ -200,12 +203,14 @@
       <div class="icon">🔧</div>
       <h3>Otros servicios</h3>
       <p>Solicita ayuda para diferentes tareas.</p>
+
       <button class="btn" onclick="mostrarPedido('Servicio')">
         Solicitar
       </button>
     </div>
 
   </div>
+
 </section>
 
 <section class="pedido" id="pedido">
@@ -213,6 +218,7 @@
   <h2>Solicita tu servicio</h2>
 
   <label>Servicio</label>
+
   <select id="servicio">
     <option value="Reparto">📦 Reparto</option>
     <option value="Compra">🛒 Compra</option>
@@ -234,8 +240,17 @@
   <label>Detalles del pedido</label>
   <textarea id="detalles" placeholder="Cuéntanos qué necesitas..."></textarea>
 
-  <div class="precio">
-    Precio estimado: 8 €
+  <label>Distancia aproximada</label>
+
+  <select id="distancia" onchange="calcularPrecio()">
+    <option value="6">Hasta 3 km - 6 €</option>
+    <option value="8">3 a 6 km - 8 €</option>
+    <option value="10">6 a 10 km - 10 €</option>
+    <option value="0">Más de 10 km - Consultar</option>
+  </select>
+
+  <div class="precio" id="precio">
+    Precio estimado: 6 €
   </div>
 
   <button class="btn" onclick="enviarPedido()">
@@ -264,6 +279,20 @@ function mostrarPedido(servicio) {
   });
 }
 
+
+function calcularPrecio() {
+
+  let distancia = document.getElementById("distancia").value;
+  let precio = document.getElementById("precio");
+
+  if (distancia === "0") {
+    precio.innerHTML = "Precio: Consultar";
+  } else {
+    precio.innerHTML = "Precio estimado: " + distancia + " €";
+  }
+}
+
+
 function enviarPedido() {
 
   let servicio = document.getElementById("servicio").value;
@@ -272,10 +301,21 @@ function enviarPedido() {
   let recogida = document.getElementById("recogida").value;
   let entrega = document.getElementById("entrega").value;
   let detalles = document.getElementById("detalles").value;
+  let distancia = document.getElementById("distancia").value;
 
   if (!nombre || !telefono || !recogida || !entrega) {
+
     alert("Por favor, completa todos los campos.");
+
     return;
+  }
+
+  let precioTexto;
+
+  if (distancia === "0") {
+    precioTexto = "Consultar";
+  } else {
+    precioTexto = distancia + " EUR";
   }
 
   let mensaje =
@@ -285,8 +325,9 @@ function enviarPedido() {
     "Telefono: " + telefono + "\n" +
     "Recogida: " + recogida + "\n" +
     "Entrega: " + entrega + "\n" +
-    "Detalles: " + (detalles || "Sin detalles") + "\n\n" +
-    "Precio estimado: 8 EUR";
+    "Detalles: " + (detalles || "Sin detalles") + "\n" +
+    "Distancia: " + (distancia === "0" ? "Más de 10 km" : distancia + " km aprox.") + "\n\n" +
+    "Precio estimado: " + precioTexto;
 
   let numero = "34641939331";
 
