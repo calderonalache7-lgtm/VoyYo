@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>VoyYo - Servicios a domicilio en Cuenca</title>
+  <title>VoyYo Cuenca - Servicios a domicilio</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -22,39 +27,40 @@
     header {
       background: #111;
       color: white;
-      padding: 25px 20px;
+      padding: 22px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 40px;
+      font-size: 42px;
       letter-spacing: 3px;
     }
 
     header p {
-      margin-top: 8px;
+      margin-top: 7px;
       color: #ddd;
-      font-size: 16px;
     }
 
     .hero {
       background: white;
-      padding: 50px 20px;
+      padding: 55px 20px;
       text-align: center;
     }
 
     .hero h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
+      font-size: 32px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       color: #555;
-      margin-bottom: 25px;
-      line-height: 1.5;
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 28px;
     }
 
     .btn {
+      display: inline-block;
       background: #111;
       color: white;
       border: none;
@@ -63,6 +69,7 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .btn:hover {
@@ -70,59 +77,131 @@
     }
 
     .services {
-      padding: 35px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
+      padding: 40px 20px;
     }
 
-    .services h2 {
+    .section-title {
       text-align: center;
-      margin-bottom: 25px;
+      font-size: 28px;
+      margin-bottom: 28px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
 
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 15px;
+      padding: 28px 22px;
+      border-radius: 16px;
       text-align: center;
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
-    .card .icon {
-      font-size: 42px;
-      margin-bottom: 12px;
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
     }
 
     .card h3 {
-      margin-bottom: 8px;
+      font-size: 21px;
+      margin-bottom: 10px;
     }
 
     .card p {
       color: #666;
-      font-size: 14px;
-      margin-bottom: 18px;
+      font-size: 15px;
       line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .how {
+      background: white;
+      padding: 40px 20px;
+    }
+
+    .steps {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .step-number {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: #111;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .prices {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .price-box {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .price-row:last-child {
+      border-bottom: none;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 18px;
     }
 
     .pedido {
       display: none;
       background: white;
-      margin: 25px auto;
-      padding: 25px;
+      margin: 30px auto;
+      padding: 28px 22px;
       max-width: 600px;
-      border-radius: 15px;
+      border-radius: 16px;
       box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     }
 
     .pedido h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     label {
@@ -138,12 +217,12 @@
       width: 100%;
       padding: 13px;
       border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 9px;
       font-size: 16px;
     }
 
     textarea {
-      min-height: 90px;
+      min-height: 100px;
       resize: vertical;
     }
 
@@ -159,43 +238,89 @@
 
     .info {
       margin-top: 15px;
-      padding: 12px;
+      padding: 14px;
       background: #fff8e1;
-      border-radius: 8px;
-      font-size: 14px;
+      border-radius: 10px;
       color: #555;
+      font-size: 14px;
       line-height: 1.5;
+    }
+
+    .contact {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    .contact h2 {
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .whatsapp {
+      background: white;
+      color: #111;
     }
 
     footer {
       background: #111;
-      color: white;
+      color: #aaa;
       text-align: center;
-      padding: 25px;
-      margin-top: 30px;
+      padding: 25px 20px;
+      font-size: 14px;
     }
 
     footer p {
       margin: 5px;
     }
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 36px;
+      }
+
+      .hero h2 {
+        font-size: 27px;
+      }
+
+      .price-row {
+        font-size: 14px;
+      }
+
+      .price {
+        font-size: 16px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
 <header>
+
   <h1>VOYYO</h1>
+
   <p>Lo necesitas. Nosotros vamos.</p>
+
 </header>
+
 
 <section class="hero">
 
-  <h2>¿Qué necesitas?</h2>
+  <h2>Servicios a domicilio en Cuenca</h2>
 
   <p>
-    Servicios y entregas a domicilio en Cuenca.
+    Repartos, compras y pequeños servicios.
     <br>
-    Fácil, rápido y sin complicaciones.
+    Tú lo necesitas. Nosotros vamos.
   </p>
 
   <button class="btn" onclick="mostrarPedido()">
@@ -204,101 +329,278 @@
 
 </section>
 
+
 <section class="services">
 
-  <h2>Nuestros servicios</h2>
+  <h2 class="section-title">
+    ¿Qué necesitas?
+  </h2>
 
   <div class="cards">
 
+
     <div class="card">
+
       <div class="icon">📦</div>
 
       <h3>Repartos</h3>
 
       <p>
-        Envíos y recogidas dentro de Cuenca.
+        Recogemos y entregamos paquetes,
+        documentos y objetos dentro de Cuenca.
       </p>
 
-      <button class="btn" onclick="mostrarPedido('Reparto')">
+      <button
+        class="btn"
+        onclick="mostrarPedido('Reparto')">
+
         Solicitar
+
       </button>
+
     </div>
 
+
     <div class="card">
+
       <div class="icon">🛒</div>
 
       <h3>Compras</h3>
 
       <p>
         ¿No puedes ir a comprar?
-        Nosotros podemos ayudarte.
+        Podemos ayudarte a recoger y entregar tu compra.
       </p>
 
-      <button class="btn" onclick="mostrarPedido('Compra')">
+      <button
+        class="btn"
+        onclick="mostrarPedido('Compra')">
+
         Solicitar
+
       </button>
+
     </div>
 
+
     <div class="card">
+
       <div class="icon">🔧</div>
 
       <h3>Otros servicios</h3>
 
       <p>
-        Necesitas ayuda con una tarea,
-        consúltanos.
+        Necesitas ayuda con una tarea
+        o servicio. Consúltanos.
       </p>
 
-      <button class="btn" onclick="mostrarPedido('Servicio')">
+      <button
+        class="btn"
+        onclick="mostrarPedido('Servicio')">
+
         Solicitar
+
       </button>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<section class="how">
+
+  <h2 class="section-title">
+    ¿Cómo funciona?
+  </h2>
+
+  <div class="steps">
+
+
+    <div class="step">
+
+      <div class="step-number">
+        1
+      </div>
+
+      <h3>Solicita</h3>
+
+      <p>
+        Rellena el formulario con los datos
+        de tu servicio.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-number">
+        2
+      </div>
+
+      <h3>Confirmamos</h3>
+
+      <p>
+        Recibimos tu pedido por WhatsApp
+        y confirmamos los detalles.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="step-number">
+        3
+      </div>
+
+      <h3>Vamos</h3>
+
+      <p>
+        Recogemos lo que necesites
+        y lo llevamos a destino.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<section class="prices">
+
+  <h2 class="section-title">
+    Precios orientativos
+  </h2>
+
+  <div class="price-box">
+
+    <div class="price-row">
+
+      <span>📍 Hasta 3 km</span>
+
+      <span class="price">
+        6 €
+      </span>
+
+    </div>
+
+
+    <div class="price-row">
+
+      <span>📍 De 3 a 6 km</span>
+
+      <span class="price">
+        8 €
+      </span>
+
+    </div>
+
+
+    <div class="price-row">
+
+      <span>📍 De 6 a 10 km</span>
+
+      <span class="price">
+        10 €
+      </span>
+
+    </div>
+
+
+    <div class="price-row">
+
+      <span>📍 Más de 10 km</span>
+
+      <span class="price">
+        Consultar
+      </span>
+
     </div>
 
   </div>
 
 </section>
 
-<section class="pedido" id="pedido">
 
-  <h2>Solicita tu servicio</h2>
+<section
+  class="pedido"
+  id="pedido">
 
-  <label>Servicio</label>
+  <h2>
+    Solicita tu servicio
+  </h2>
+
+
+  <label>
+    Servicio
+  </label>
 
   <select id="servicio">
-    <option value="Reparto">📦 Reparto</option>
-    <option value="Compra">🛒 Compra</option>
-    <option value="Servicio">🔧 Otro servicio</option>
+
+    <option value="Reparto">
+      📦 Reparto
+    </option>
+
+    <option value="Compra">
+      🛒 Compra
+    </option>
+
+    <option value="Servicio">
+      🔧 Otro servicio
+    </option>
+
   </select>
 
-  <label>Tu nombre</label>
+
+  <label>
+    Tu nombre
+  </label>
 
   <input
     type="text"
     id="nombre"
     placeholder="Escribe tu nombre">
 
-  <label>Teléfono</label>
+
+  <label>
+    Teléfono
+  </label>
 
   <input
     type="tel"
     id="telefono"
     placeholder="Tu teléfono">
 
-  <label>Dirección de recogida</label>
+
+  <label>
+    Dirección de recogida
+  </label>
 
   <input
     type="text"
     id="recogida"
     placeholder="¿Dónde recogemos?">
 
-  <label>Dirección de entrega</label>
+
+  <label>
+    Dirección de entrega
+  </label>
 
   <input
     type="text"
     id="entrega"
     placeholder="¿Dónde entregamos?">
 
-  <label>Distancia aproximada</label>
+
+  <label>
+    Distancia aproximada
+  </label>
 
   <select
     id="distancia"
@@ -322,53 +624,115 @@
 
   </select>
 
-  <label>Detalles del pedido</label>
+
+  <label>
+    Detalles del servicio
+  </label>
 
   <textarea
     id="detalles"
     placeholder="Cuéntanos qué necesitas..."></textarea>
 
-  <div class="precio" id="precio">
+
+  <div
+    class="precio"
+    id="precio">
+
     Precio estimado: 6 €
+
   </div>
 
+
   <div class="info">
-    📌 El precio mostrado es una estimación.
-    Para servicios especiales o distancias superiores
-    a 10 km, consulta el precio por WhatsApp.
+
+    📍 Actualmente prestamos servicio
+    únicamente en Cuenca.
+
+    <br><br>
+
+    💰 Los precios son orientativos.
+    El precio final se confirma antes
+    de realizar el servicio.
+
   </div>
+
 
   <br>
 
-  <button class="btn" onclick="enviarPedido()">
+
+  <button
+    class="btn"
+    onclick="enviarPedido()">
+
     📲 Enviar pedido por WhatsApp
+
   </button>
 
 </section>
 
+
+<section class="contact">
+
+  <h2>
+    ¿Tienes alguna duda?
+  </h2>
+
+  <p>
+    Escríbenos directamente por WhatsApp.
+  </p>
+
+  <a
+    class="btn whatsapp"
+    href="https://wa.me/34641939331"
+    target="_blank">
+
+    💬 Hablar por WhatsApp
+
+  </a>
+
+</section>
+
+
 <footer>
 
-  <p>© 2026 VoyYo</p>
-  <p>Servicios a domicilio</p>
-  <p>Cuenca</p>
+  <p>
+    © 2026 VoyYo
+  </p>
+
+  <p>
+    Servicios a domicilio · Cuenca
+  </p>
+
+  <p>
+    Horario: consultar disponibilidad
+  </p>
 
 </footer>
 
+
 <script>
+
 
 function mostrarPedido(servicio) {
 
   document.getElementById("pedido").style.display = "block";
 
+
   if (servicio) {
+
     document.getElementById("servicio").value = servicio;
+
   }
 
+
   document.getElementById("pedido").scrollIntoView({
+
     behavior: "smooth"
+
   });
 
 }
+
 
 function calcularPrecio() {
 
@@ -378,12 +742,15 @@ function calcularPrecio() {
   let precio =
     document.getElementById("precio");
 
+
   if (distancia === "0") {
 
     precio.innerHTML =
       "Precio: Consultar";
 
-  } else {
+  }
+
+  else {
 
     precio.innerHTML =
       "Precio estimado: " +
@@ -394,28 +761,37 @@ function calcularPrecio() {
 
 }
 
+
 function enviarPedido() {
+
 
   let servicio =
     document.getElementById("servicio").value;
 
+
   let nombre =
     document.getElementById("nombre").value.trim();
+
 
   let telefono =
     document.getElementById("telefono").value.trim();
 
+
   let recogida =
     document.getElementById("recogida").value.trim();
+
 
   let entrega =
     document.getElementById("entrega").value.trim();
 
+
   let detalles =
     document.getElementById("detalles").value.trim();
 
+
   let distancia =
     document.getElementById("distancia").value;
+
 
   if (
     !nombre ||
@@ -429,35 +805,67 @@ function enviarPedido() {
     );
 
     return;
+
   }
+
 
   let precio;
 
+
   if (distancia === "0") {
+
     precio = "Consultar";
-  } else {
-    precio = distancia + " EUR";
+
   }
+
+  else {
+
+    precio = distancia + " EUR";
+
+  }
+
 
   let distanciaTexto;
 
+
   if (distancia === "6") {
-    distanciaTexto = "Hasta 3 km";
-  } else if (distancia === "8") {
-    distanciaTexto = "De 3 a 6 km";
-  } else if (distancia === "10") {
-    distanciaTexto = "De 6 a 10 km";
-  } else {
-    distanciaTexto = "Más de 10 km";
+
+    distanciaTexto =
+      "Hasta 3 km";
+
   }
+
+  else if (distancia === "8") {
+
+    distanciaTexto =
+      "De 3 a 6 km";
+
+  }
+
+  else if (distancia === "10") {
+
+    distanciaTexto =
+      "De 6 a 10 km";
+
+  }
+
+  else {
+
+    distanciaTexto =
+      "Más de 10 km";
+
+  }
+
 
   let mensaje =
 
     "🚗 NUEVO PEDIDO VOYYO\n\n" +
 
+    "📍 Ciudad: Cuenca\n" +
+
     "📦 Servicio: " +
     servicio +
-    "\n" +
+    "\n\n" +
 
     "👤 Cliente: " +
     nombre +
@@ -465,7 +873,7 @@ function enviarPedido() {
 
     "📞 Teléfono: " +
     telefono +
-    "\n" +
+    "\n\n" +
 
     "📍 Recogida: " +
     recogida +
@@ -473,7 +881,7 @@ function enviarPedido() {
 
     "🏠 Entrega: " +
     entrega +
-    "\n" +
+    "\n\n" +
 
     "📏 Distancia: " +
     distanciaTexto +
@@ -486,15 +894,20 @@ function enviarPedido() {
     "💰 Precio estimado: " +
     precio;
 
-  let numero = "34641939331";
+
+  let numero =
+    "34641939331";
+
 
   window.location.href =
+
     "https://wa.me/" +
     numero +
     "?text=" +
     encodeURIComponent(mensaje);
 
 }
+
 
 </script>
 
