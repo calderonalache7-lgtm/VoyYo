@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>VoyYo Cuenca - Servicios a domicilio</title>
+  <title>VoyYo - Administración</title>
 
   <style>
 
@@ -28,169 +28,149 @@
     }
 
     header h1 {
-      font-size: 42px;
-      letter-spacing: 3px;
+      font-size: 36px;
+      letter-spacing: 2px;
     }
 
     header p {
       margin-top: 8px;
-      color: #ddd;
-      font-size: 16px;
+      color: #ccc;
     }
 
-    .zona {
-      background: #e9e9e9;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      font-weight: bold;
+    .contenedor {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
-    .hero {
-      background: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: #555;
-      margin-bottom: 25px;
-      line-height: 1.5;
-    }
-
-    .btn {
-      background: #111;
-      color: white;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      opacity: 0.85;
-    }
-
-    .services {
-      padding: 35px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .services h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
+    .panel {
       background: white;
       padding: 25px;
       border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .panel h2 {
+      margin-bottom: 20px;
+    }
+
+    .estadisticas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .estadistica {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
       text-align: center;
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
-    .card .icon {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 18px;
-      line-height: 1.4;
+    .estadistica strong {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 5px;
     }
 
     .pedido {
-      display: none;
-      background: white;
-      margin: 25px auto;
-      padding: 25px;
-      max-width: 600px;
-      border-radius: 15px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
     }
 
-    .pedido h2 {
-      text-align: center;
-      margin-bottom: 20px;
+    .pedido h3 {
+      margin-bottom: 12px;
     }
 
-    label {
-      display: block;
-      margin-top: 15px;
-      margin-bottom: 7px;
+    .pedido p {
+      margin: 7px 0;
+      color: #444;
+    }
+
+    .estado {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 13px;
       font-weight: bold;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
-
-    .precio {
-      margin: 22px 0;
-      padding: 18px;
-      background: #f1f1f1;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 21px;
-      font-weight: bold;
-    }
-
-    .info {
-      margin-top: 15px;
-      padding: 12px;
-      background: #fff8e1;
-      border-radius: 8px;
-      font-size: 14px;
-      color: #555;
-      line-height: 1.4;
-    }
-
-    .whatsapp {
-      width: 100%;
       margin-top: 10px;
+      background: #eee;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .pendiente {
+      background: #fff3cd;
+    }
+
+    .curso {
+      background: #cfe2ff;
+    }
+
+    .completado {
+      background: #d1e7dd;
+    }
+
+    .cancelado {
+      background: #f8d7da;
+    }
+
+    .btn-pendiente {
+      background: #ffc107;
+    }
+
+    .btn-curso {
+      background: #0d6efd;
+      color: white;
+    }
+
+    .btn-completado {
+      background: #198754;
+      color: white;
+    }
+
+    .btn-cancelado {
+      background: #dc3545;
+      color: white;
+    }
+
+    .vacio {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+    }
+
+    .cerrar {
+      display: block;
+      margin: 25px auto 0;
+      background: #111;
+      color: white;
     }
 
     footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 25px;
-      margin-top: 30px;
-    }
-
-    footer p {
-      margin: 5px;
+      padding: 20px;
+      margin-top: 40px;
     }
 
   </style>
@@ -198,248 +178,103 @@
 
 <body>
 
+
 <header>
 
   <h1>VOYYO</h1>
 
-  <p>Lo necesitas. Nosotros vamos.</p>
+  <p>Panel de administración</p>
 
 </header>
 
 
-<div class="zona">
+<div class="contenedor">
 
-  📍 SERVICIO DISPONIBLE ACTUALMENTE EN CUENCA
+
+  <div class="estadisticas">
+
+    <div class="estadistica">
+
+      <strong id="total">
+        0
+      </strong>
+
+      Pedidos totales
+
+    </div>
+
+
+    <div class="estadistica">
+
+      <strong id="pendientes">
+        0
+      </strong>
+
+      Pendientes
+
+    </div>
+
+
+    <div class="estadistica">
+
+      <strong id="curso">
+        0
+      </strong>
+
+      En curso
+
+    </div>
+
+
+    <div class="estadistica">
+
+      <strong id="completados">
+        0
+      </strong>
+
+      Completados
+
+    </div>
+
+  </div>
+
+
+  <div class="panel">
+
+    <h2>
+      📦 Pedidos de VoyYo
+    </h2>
+
+    <div id="listaPedidos">
+
+      <div class="vacio">
+
+        Todavía no hay pedidos.
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="cerrar"
+    onclick="volverInicio()">
+
+    ← Volver a VoyYo
+
+  </button>
+
 
 </div>
-
-
-<section class="hero">
-
-  <h2>¿Qué necesitas?</h2>
-
-  <p>
-    Hacemos repartos, compras y pequeños servicios
-    a domicilio en Cuenca.
-  </p>
-
-  <button
-    class="btn"
-    onclick="mostrarPedido()">
-
-    Solicitar un servicio
-
-  </button>
-
-</section>
-
-
-<section class="services">
-
-  <h2>Nuestros servicios</h2>
-
-
-  <div class="cards">
-
-
-    <div class="card">
-
-      <div class="icon">📦</div>
-
-      <h3>Repartos</h3>
-
-      <p>
-        Recogemos y entregamos tus paquetes
-        dentro de Cuenca.
-      </p>
-
-      <button
-        class="btn"
-        onclick="mostrarPedido('Reparto')">
-
-        Solicitar
-
-      </button>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">🛒</div>
-
-      <h3>Compras</h3>
-
-      <p>
-        ¿No puedes ir a comprar?
-        Nosotros podemos hacerlo por ti.
-      </p>
-
-      <button
-        class="btn"
-        onclick="mostrarPedido('Compra')">
-
-        Solicitar
-
-      </button>
-
-    </div>
-
-
-    <div class="card">
-
-      <div class="icon">🔧</div>
-
-      <h3>Otros servicios</h3>
-
-      <p>
-        Cuéntanos qué necesitas y veremos
-        cómo podemos ayudarte.
-      </p>
-
-      <button
-        class="btn"
-        onclick="mostrarPedido('Servicio')">
-
-        Solicitar
-
-      </button>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<section
-  class="pedido"
-  id="pedido">
-
-  <h2>Solicita tu servicio</h2>
-
-
-  <label>Servicio</label>
-
-  <select id="servicio">
-
-    <option value="Reparto">
-      📦 Reparto
-    </option>
-
-    <option value="Compra">
-      🛒 Compra
-    </option>
-
-    <option value="Servicio">
-      🔧 Otro servicio
-    </option>
-
-  </select>
-
-
-  <label>Tu nombre</label>
-
-  <input
-    type="text"
-    id="nombre"
-    placeholder="Escribe tu nombre">
-
-
-  <label>Teléfono</label>
-
-  <input
-    type="tel"
-    id="telefono"
-    placeholder="Tu teléfono">
-
-
-  <label>Dirección de recogida</label>
-
-  <input
-    type="text"
-    id="recogida"
-    placeholder="Ej: Calle Mayor 10, Cuenca">
-
-
-  <label>Dirección de entrega</label>
-
-  <input
-    type="text"
-    id="entrega"
-    placeholder="Ej: Avenida Castilla 5, Cuenca">
-
-
-  <label>Distancia aproximada</label>
-
-  <select
-    id="distancia"
-    onchange="calcularPrecio()">
-
-    <option value="5">
-      Hasta 3 km - 5 €
-    </option>
-
-    <option value="7">
-      De 3 a 6 km - 7 €
-    </option>
-
-    <option value="9">
-      De 6 a 10 km - 9 €
-    </option>
-
-    <option value="0">
-      Más de 10 km - Consultar
-    </option>
-
-  </select>
-
-
-  <label>Detalles del pedido</label>
-
-  <textarea
-    id="detalles"
-    placeholder="Cuéntanos qué necesitas..."></textarea>
-
-
-  <div
-    class="precio"
-    id="precio">
-
-    Precio estimado: 5 €
-
-  </div>
-
-
-  <div class="info">
-
-    📌 Servicio disponible actualmente en Cuenca.
-    El precio mostrado es orientativo.
-    Si el servicio requiere algo especial,
-    te confirmaremos el precio por WhatsApp.
-
-  </div>
-
-
-  <button
-    class="btn whatsapp"
-    onclick="enviarPedido()">
-
-    📲 Enviar pedido por WhatsApp
-
-  </button>
-
-</section>
 
 
 <footer>
 
   <p>© 2026 VoyYo</p>
 
-  <p>Servicios a domicilio</p>
-
-  <p>📍 Cuenca</p>
+  <p>Administración - Cuenca</p>
 
 </footer>
 
@@ -447,184 +282,179 @@
 <script>
 
 
-function mostrarPedido(servicio) {
-
-  document.getElementById("pedido").style.display = "block";
+let pedidos = [];
 
 
-  if (servicio) {
+function mostrarPedidos() {
 
-    document.getElementById("servicio").value = servicio;
+  let lista =
+    document.getElementById("listaPedidos");
 
-  }
-
-
-  document.getElementById("pedido").scrollIntoView({
-
-    behavior: "smooth"
-
-  });
-
-}
+  lista.innerHTML = "";
 
 
-function calcularPrecio() {
+  if (pedidos.length === 0) {
 
-  let distancia =
-    document.getElementById("distancia").value;
+    lista.innerHTML =
+      '<div class="vacio">Todavía no hay pedidos.</div>';
 
-  let precio =
-    document.getElementById("precio");
-
-
-  if (distancia === "0") {
-
-    precio.innerHTML =
-      "Precio: Consultar";
-
-  } else {
-
-    precio.innerHTML =
-      "Precio estimado: " +
-      distancia +
-      " €";
-
-  }
-
-}
-
-
-function enviarPedido() {
-
-  let servicio =
-    document.getElementById("servicio").value;
-
-  let nombre =
-    document.getElementById("nombre").value.trim();
-
-  let telefono =
-    document.getElementById("telefono").value.trim();
-
-  let recogida =
-    document.getElementById("recogida").value.trim();
-
-  let entrega =
-    document.getElementById("entrega").value.trim();
-
-  let detalles =
-    document.getElementById("detalles").value.trim();
-
-  let distancia =
-    document.getElementById("distancia").value;
-
-
-  if (
-    !nombre ||
-    !telefono ||
-    !recogida ||
-    !entrega
-  ) {
-
-    alert(
-      "Por favor, completa tu nombre, teléfono, recogida y entrega."
-    );
+    actualizarEstadisticas();
 
     return;
 
   }
 
 
-  let precio;
+  pedidos.forEach(function(pedido, indice) {
 
-  if (distancia === "0") {
+    let claseEstado = "";
 
-    precio = "Consultar";
+    if (pedido.estado === "Pendiente") {
+      claseEstado = "pendiente";
+    }
 
-  } else {
+    else if (pedido.estado === "En curso") {
+      claseEstado = "curso";
+    }
 
-    precio = distancia + " EUR";
+    else if (pedido.estado === "Completado") {
+      claseEstado = "completado";
+    }
 
-  }
-
-
-  let distanciaTexto;
-
-
-  if (distancia === "5") {
-
-    distanciaTexto = "Hasta 3 km";
-
-  }
-
-  else if (distancia === "7") {
-
-    distanciaTexto = "De 3 a 6 km";
-
-  }
-
-  else if (distancia === "9") {
-
-    distanciaTexto = "De 6 a 10 km";
-
-  }
-
-  else {
-
-    distanciaTexto = "Más de 10 km";
-
-  }
+    else if (pedido.estado === "Cancelado") {
+      claseEstado = "cancelado";
+    }
 
 
-  let mensaje =
+    let elemento =
+      document.createElement("div");
 
-    "🚗 NUEVO PEDIDO VOYYO\n\n" +
-
-    "📍 Zona: Cuenca\n" +
-
-    "📦 Servicio: " +
-    servicio +
-    "\n" +
-
-    "👤 Cliente: " +
-    nombre +
-    "\n" +
-
-    "📞 Teléfono: " +
-    telefono +
-    "\n" +
-
-    "📍 Recogida: " +
-    recogida +
-    "\n" +
-
-    "🏠 Entrega: " +
-    entrega +
-    "\n" +
-
-    "📏 Distancia: " +
-    distanciaTexto +
-    "\n" +
-
-    "📝 Detalles: " +
-    (detalles || "Sin detalles") +
-    "\n\n" +
-
-    "💰 Precio estimado: " +
-    precio;
+    elemento.className = "pedido";
 
 
-  let numero =
-    "34641939331";
+    elemento.innerHTML =
+
+      "<h3>Pedido #" +
+      (indice + 1) +
+      "</h3>" +
+
+      "<p><strong>Servicio:</strong> " +
+      pedido.servicio +
+      "</p>" +
+
+      "<p><strong>Cliente:</strong> " +
+      pedido.nombre +
+      "</p>" +
+
+      "<p><strong>Teléfono:</strong> " +
+      pedido.telefono +
+      "</p>" +
+
+      "<p><strong>Recogida:</strong> " +
+      pedido.recogida +
+      "</p>" +
+
+      "<p><strong>Entrega:</strong> " +
+      pedido.entrega +
+      "</p>" +
+
+      "<p><strong>Precio:</strong> " +
+      pedido.precio +
+      "</p>" +
+
+      "<p><strong>Detalles:</strong> " +
+      pedido.detalles +
+      "</p>" +
+
+      "<span class='estado " +
+      claseEstado +
+      "'>" +
+      pedido.estado +
+      "</span>" +
+
+      "<div class='botones'>" +
+
+      "<button class='btn-pendiente' onclick='cambiarEstado(" +
+      indice +
+      ", \"Pendiente\")'>Pendiente</button>" +
+
+      "<button class='btn-curso' onclick='cambiarEstado(" +
+      indice +
+      ", \"En curso\")'>En curso</button>" +
+
+      "<button class='btn-completado' onclick='cambiarEstado(" +
+      indice +
+      ", \"Completado\")'>Completado</button>" +
+
+      "<button class='btn-cancelado' onclick='cambiarEstado(" +
+      indice +
+      ", \"Cancelado\")'>Cancelado</button>" +
+
+      "</div>";
 
 
-  window.location.href =
+    lista.appendChild(elemento);
 
-    "https://wa.me/" +
-    numero +
-    "?text=" +
-    encodeURIComponent(mensaje);
+  });
+
+
+  actualizarEstadisticas();
 
 }
+
+
+function cambiarEstado(indice, estado) {
+
+  pedidos[indice].estado = estado;
+
+  mostrarPedidos();
+
+}
+
+
+function actualizarEstadisticas() {
+
+  document.getElementById("total").innerText =
+    pedidos.length;
+
+
+  document.getElementById("pendientes").innerText =
+
+    pedidos.filter(function(pedido) {
+
+      return pedido.estado === "Pendiente";
+
+    }).length;
+
+
+  document.getElementById("curso").innerText =
+
+    pedidos.filter(function(pedido) {
+
+      return pedido.estado === "En curso";
+
+    }).length;
+
+
+  document.getElementById("completados").innerText =
+
+    pedidos.filter(function(pedido) {
+
+      return pedido.estado === "Completado";
+
+    }).length;
+
+}
+
+
+function volverInicio() {
+
+  window.location.href = "index.html";
+
+}
+
+
+mostrarPedidos();
 
 
 </script>
